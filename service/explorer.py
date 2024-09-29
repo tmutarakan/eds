@@ -1,5 +1,5 @@
 from model.explorer import Explorer
-import fake.explorer as data
+import data.explorer as data
 
 
 def get_all() -> list[Explorer]:
@@ -14,13 +14,9 @@ def create(explorer: Explorer) -> Explorer:
     return data.create(explorer)
 
 
-def replace(id, explorer: Explorer) -> Explorer:
-    return data.replace(id, explorer)
+def modify(explorer: Explorer) -> Explorer:
+    return data.modify(explorer)
 
 
-def modify(id, explorer: Explorer) -> Explorer:
-    return data.modify(id, explorer)
-
-
-def delete(id, explorer: Explorer) -> bool:
-    return data.delete(id)
+def delete(explorer: Explorer) -> bool:
+    return data.delete(explorer)
