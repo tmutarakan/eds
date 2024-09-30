@@ -165,3 +165,7 @@ cython_debug/
 .vscode/
 
 .pylintrc
+
+# sqlite3
+*.db
+*.db-journal
