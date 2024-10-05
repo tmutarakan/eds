@@ -4,7 +4,6 @@ from model.creature import Creature
 from error import Missing, Duplicate
 from data import creature
 
-
 # set this before data imports below for data.init
 os.environ["CRYPTID_SQLITE_DB"] = ":memory:"
 

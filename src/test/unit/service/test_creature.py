@@ -1,5 +1,11 @@
+import os
+import pytest
 from model.creature import Creature
+from error import Missing
 from service import creature as code
+
+
+os.environ["CRYPTID_SQLITE_DB"] = ":memory:"
 
 
 sample = Creature(
@@ -22,5 +28,5 @@ def test_get_exists():
 
 
 def test_get_missing():
-    resp = code.get_one("boxturtle")
-    assert resp is None
+    with pytest.raises(Missing):
+        _ = code.get_one("boxturtle")
