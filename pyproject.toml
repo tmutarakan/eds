@@ -1,21 +1,14 @@
 [tool.poetry]
 name = "eds"
 version = "0.1.0"
-description = ""
-authors = ["tmutarakan"]
+description = "electronic digital signature"
+authors = ["tmutarakan <ratibor.tmutarakansky@yandex.ru>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-fastapi = {extras = ["all"], version = "^0.114.0"}
-uvicorn = "^0.30.6"
-httpie = "^3.2.3"
-httpx = "^0.27.2"
-pytest = "^8.3.3"
-python-jose = {extras = ["cryptography"], version = "^3.3.0"}
-passlib = "^1.7.4"
-python-multipart = "^0.0.12"
-pytest-mock = "^3.14.0"
+fastapi = {extras = ["all"], version = "^0.115.2"}
+uvicorn = {extras = ["standard"], version = "^0.32.0"}
 
 
 [build-system]
