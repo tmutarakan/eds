@@ -1,40 +1,47 @@
 from fastapi import APIRouter
 
 
-user_route = APIRouter()
+router = APIRouter()
 
 
-@user_route.get('/{user_id}')
-def get_user(user_id: int):
+@router.get('/')
+def get_all():
+    return {
+        "name": "XYZ"
+    }
+
+
+@router.get('/{user_id}')
+def get_one(user_id: int):
     return {
         "id": user_id,
         "name": "XYZ"
     }
 
 
-@user_route.post('/add')
-def add_user():
+@router.post('/')
+def create():
     return {
         "name": "XYZ"
     }
 
 
-@user_route.put('/change')
-def change_user():
+@router.patch('/')
+def modify():
     return {
         "name": "XYZ"
     }
 
 
-@user_route.patch('/update')
-def update_user():
+@router.put('/')
+def replace():
     return {
         "name": "XYZ"
     }
 
 
-@user_route.delete('/delete')
-def delete_user():
+@router.delete('/')
+def delete():
     return {
         "name": "XYZ"
     }

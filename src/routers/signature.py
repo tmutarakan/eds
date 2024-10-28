@@ -1,40 +1,47 @@
 from fastapi import APIRouter
 
 
-signature_route = APIRouter()
+router = APIRouter()
 
 
-@signature_route.get('/{signature_id}')
-def get_signature(signature_id: int):
-    return {
-        "id": signature_id,
-        "name": "XYZ"
-    }
-
-
-@signature_route.post('/add')
-def add_signature():
+@router.get('/')
+def get_all():
     return {
         "name": "XYZ"
     }
 
 
-@signature_route.put('/change')
-def change_signature():
+@router.get('/{user_id}')
+def get_one(user_id: int):
+    return {
+        "id": user_id,
+        "name": "XYZ"
+    }
+
+
+@router.post('/')
+def create():
     return {
         "name": "XYZ"
     }
 
 
-@signature_route.patch('/update')
-def update_signature():
+@router.patch('/')
+def modify():
     return {
         "name": "XYZ"
     }
 
 
-@signature_route.delete('/delete')
-def delete_signature():
+@router.put('/')
+def replace():
+    return {
+        "name": "XYZ"
+    }
+
+
+@router.delete('/')
+def delete():
     return {
         "name": "XYZ"
     }

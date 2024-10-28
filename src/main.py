@@ -1,12 +1,10 @@
 from fastapi import FastAPI
 
-from routers.user import user_route
-from routers.employeer import employeer_route
-from routers.signature import signature_route
+from routers import user, employeer, signature
 
 
 app = FastAPI()
-app.include_router(user_route, prefix="/user")
+app.include_router(user.router, prefix="/user")
 app.include_router(employeer_route, prefix="/employeer")
 app.include_router(signature_route, prefix="/signature")
 
