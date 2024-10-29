@@ -42,7 +42,7 @@ def replace(user: User) -> User:
     return user
 
 
-def delete(name: str) -> bool:
+def delete(name: str) -> None:
     """Удаление записи исследователя; возврат значения None,
     если запись существовала"""
     return None

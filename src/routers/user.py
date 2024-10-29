@@ -1,47 +1,36 @@
 from fastapi import APIRouter
+from model.user import User
+import fake.user as service
 
 
 router = APIRouter()
 
 
 @router.get('/')
-def get_all():
-    return {
-        "name": "XYZ"
-    }
+def get_all() -> list[User]:
+    return service.get_all()
 
 
-@router.get('/{user_id}')
-def get_one(user_id: int):
-    return {
-        "id": user_id,
-        "name": "XYZ"
-    }
+@router.get('/{name}')
+def get_one(name: str) -> User | None:
+    return service.get_one(name)
 
 
 @router.post('/')
-def create():
-    return {
-        "name": "XYZ"
-    }
+def create(user: User) -> User:
+    return service.create(user)
 
 
 @router.patch('/')
-def modify():
-    return {
-        "name": "XYZ"
-    }
+def modify(user: User) -> User:
+    return service.modify(user)
 
 
 @router.put('/')
-def replace():
-    return {
-        "name": "XYZ"
-    }
+def replace(user: User) -> User:
+    return service.replace(user)
 
 
-@router.delete('/')
-def delete():
-    return {
-        "name": "XYZ"
-    }
+@router.delete('/{namec}')
+def delete(name: str) -> None:
+    return service.delete(name)
