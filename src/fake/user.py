@@ -29,6 +29,7 @@ def get_one(name: str) -> User | None:
 
 def create(user: User) -> User:
     """Добавление исследователя"""
+    _users.append(user)
     return user
 
 

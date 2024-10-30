@@ -3,7 +3,7 @@ from model.user import User
 import fake.user as service
 
 
-router = APIRouter()
+router = APIRouter(prefix="/user")
 
 
 @router.get('/')

@@ -1,9 +1,14 @@
 from fastapi import FastAPI
+import uvicorn
 
-from routers import user, employeer, signature
+from router import user, employeer, signature
 
 
 app = FastAPI()
-app.include_router(user.router, prefix="/user")
-app.include_router(employeer.router, prefix="/employeer")
-app.include_router(signature.router, prefix="/signature")
+app.include_router(user.router)
+app.include_router(employeer.router)
+app.include_router(signature.router)
+
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", reload=True)
