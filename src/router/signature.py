@@ -1,47 +1,36 @@
 from fastapi import APIRouter
+from model.signature import Signature
+import service.signature as service
 
 
 router = APIRouter(prefix="/signature")
 
 
 @router.get('/')
-def get_all():
-    return {
-        "name": "XYZ"
-    }
+def get_all() -> list[Signature]:
+    return service.get_all()
 
 
-@router.get('/{user_id}')
-def get_one(user_id: int):
-    return {
-        "id": user_id,
-        "name": "XYZ"
-    }
+@router.get('/{filename}')
+def get_one(filename: str):
+    return service.get_one(filename)
 
 
 @router.post('/')
-def create():
-    return {
-        "name": "XYZ"
-    }
+def create(signature: Signature):
+    return service.create(signature)
 
 
 @router.patch('/')
-def modify():
-    return {
-        "name": "XYZ"
-    }
+def modify(signature: Signature):
+    return service.modify(signature)
 
 
 @router.put('/')
-def replace():
-    return {
-        "name": "XYZ"
-    }
+def replace(signature: Signature):
+    return service.replace(signature)
 
 
 @router.delete('/')
-def delete():
-    return {
-        "name": "XYZ"
-    }
+def delete(filename: str):
+    return service.delete(filename)

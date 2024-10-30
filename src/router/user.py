@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from model.user import User
-import fake.user as service
+import service.user as service
 
 
 router = APIRouter(prefix="/user")
@@ -31,6 +31,6 @@ def replace(user: User) -> User:
     return service.replace(user)
 
 
-@router.delete('/{namec}')
+@router.delete('/{name}')
 def delete(name: str) -> None:
     return service.delete(name)

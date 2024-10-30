@@ -1,5 +1,5 @@
 from model.employeer import Employeer
-import fake.employeer as data
+import data.employeer as data
 
 
 def get_all() -> list[Employeer]:
@@ -22,5 +22,5 @@ def modify(employeer_id: int, employeer: Employeer) -> Employeer:
     return data.modify(employeer_id, employeer)
 
 
-def delete(employeer_id: int, employeer: Employeer) -> bool:
-    return data.delete(employeer_id)
+def delete(employeer: Employeer) -> bool:
+    return data.delete(employeer)

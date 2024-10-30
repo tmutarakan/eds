@@ -1,5 +1,5 @@
 from model.user import User
-import fake.user as data
+import data.user as data
 
 
 def get_all() -> list[User]:
